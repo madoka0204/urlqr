@@ -1,5 +1,5 @@
 import qrcode
-img=qrcode.make("http://wwww.kyoto-wu.ac.jp")
+img=qrcode.make("http://www.kyoto-wu.ac.jp")
 img.save("kyotowu.png")
 
 with open("kyotowu.png","wb")as f:
@@ -17,7 +17,7 @@ with st.form(key="url-input",clear_on_submit=True):
 if url:
     img=qrcode.make(url)
 
-    with io.BytesI0() as f:
+    with io.BytesIO() as f:
         img.save(f,format="PNG")
         png=f.getvalue()
     st.write(url)
